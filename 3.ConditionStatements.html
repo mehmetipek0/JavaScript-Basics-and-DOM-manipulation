@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Condition statements</title>
+</head>
+<body>
+    
+    <script>
+        var brand = 'Opel';
+        var model = 'Astra'
+        var automatic = prompt('Is the car automatic?(true/false)');
+        // if/else statement
+        if(automatic == true){
+            alert('The car is automatic.');
+        }
+        else{
+            alert('The car is not automatic');
+        }
+
+        // swich/case statement
+
+        switch(automatic){
+            case 'true':
+                alert('The car is automatic. switch case');
+                break;
+            
+            case 'false':
+                alert('The car is not automatic with switch case');
+                break;
+            
+        }
+
+    
+    </script>
+</body>
+</html>

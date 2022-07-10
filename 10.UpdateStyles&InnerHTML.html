@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Update Styles and Inner HTML</title>
+    <style>
+        .active{
+            color: blue;
+            font-size: 2rem;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Best free stock photos in one place.</h1>
+    <h3 id="sub-title">Search for free stock photos...</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, saepe?</p>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+    <img src="./images/image.jpg" alt="Wallpaper" width="500">
+    
+    
+    <script>
+        var title = document.getElementById('title');
+        /*title.style.color='yellow';
+        title.style.fontSize='3rem';
+        title.style.border='2px solid black';*/
+        title.classList.add('active'); //classList.remove('active');
+        
+        var p = document.getElementsByTagName('p')[0];
+        //p.textContent='Something pitcures someting somewhere someting lelelele.'
+        p.innerHTML=' <b>Something </b> pitcures someting somewhere someting lelelele.'
+        
+        var ul = document.querySelector('ul');
+        
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <img src="#" alt="Card image cap" class="card-img-top" width="500" height="300">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var models = [
+        {
+            name: 'Mazda CX-3',
+            image: 'images/mazda.jpg',
+            link: 'https://www.arabalar.com.tr/mazda/cx-3/2017/1-5-sky-d-motion'
+        },
+        {
+            name: 'BMW 418d',
+            image: 'images/bmw.jpg',
+            link: 'https://www.arabalar.com.tr/bmw/4-serisi/2018/418d-2-0-gran-coupe'
+        },
+        {
+            name: 'Volvo S60',
+            image: 'images/volvo.jpg',
+            link: 'https://www.arabalar.com.tr/volvo/s60/2018/1-5-t3-advance'
+        }
+    ]
+
+       
+        var img = document.querySelector('.card-img-top');
+        var title = document.querySelector('.card-title');
+        var a = document.querySelector('a');
+
+        setInterval(function(){
+            var temp = index
+            var index = Math.floor(Math.random()*models.length);
+            while(temp == index){
+                var index = Math.floor(Math.random()*models.length);
+            }
+            
+            
+            img.setAttribute('src',models[index].image);
+            a.setAttribute('href', models[index].link);
+            title.textContent=models[index].name;
+        },1000);
+        
+
+    </script>
+</body>
+</html>

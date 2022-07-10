@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Index HTML Exercise</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+       <div class="container mt-2">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">Mazda</li>
+                    <li class="list-group-item">Toyota</li>
+                    <li class="list-group-item active">Volvo</li>
+                    <li class="list-group-item">Renault</li>
+                    <li class="list-group-item">Mercedes</li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var models=[
+            {name:'Mazda',selected:false},
+            {name:'Toyota',selected:false},
+            {name:'Volvo',selected:true},
+            {name:'Renault',selected:false},
+            {name:'Mercedes',selected:false},
+            {name:'BMW',selected:false},
+            {name:'Kia',selected:false},
+            {name:'Nissan',selected:false},
+        ];
+        
+        var html = document.querySelector('.list-group');
+       
+        models.forEach(function(model){
+            var li = '';
+            if(model.selected){
+                var li = '<li class="list-group-item active">'+ model.name +'</li>';
+            }
+            else{
+                var li = '<li class="list-group-item">'+ model.name +'</li>';
+            }
+            html.innerHTML+=li;
+
+        });
+
+    </script> 
+</body>
+</html>

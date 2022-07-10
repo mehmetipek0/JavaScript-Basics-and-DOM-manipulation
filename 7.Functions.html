@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+</head>
+<body>
+    
+
+    <script>
+        function isEven(num){
+            if(num%2==0){
+                alert("Even.");
+            }
+            else{
+                alert("Odd");
+            }
+        }
+        var number = prompt("Enter a number.");
+        isEven(number);
+
+        function factorial(num){
+            var temp = 1;
+            while (!num==0){
+                temp *= num;
+                num--;
+            }
+            alert(temp);
+        }
+        var numberf = prompt("Enter a number to get its factorial.");
+        factorial(numberf);
+
+        function showArray(A){
+            A.forEach(function(item){
+                console.log(item);
+            });
+        }
+        var arr = [5,3,4,8,9,54,84,665,1];
+        showArray(arr);
+    </script>
+</body>
+</html>

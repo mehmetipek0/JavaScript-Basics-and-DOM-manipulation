@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Tag Access</title>
+    <style>
+       .container{
+        width: 75%;
+        height: 120px;
+        margin: 10px auto;
+        background: black;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: center;
+       }
+       .box{
+        height: 110px;
+        width: 33%;
+        margin: 20px;
+       }
+        #blue{
+            background-color: blue;
+        }
+        #red{
+            background-color: red;
+        }
+        #green{
+            background-color: green;
+        }
+        .todoitem{
+            padding: 4px;
+            font-family: sans-serif;   
+            border: 2px solid black;
+            max-width: 33%;
+            margin: 0 33%;
+            background: #a7a7a7
+        }
+        ul li:hover{
+            background: #585858;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <div id="blue" class="box"></div>
+        <div id="red" class="box"></div>
+        <div id="green" class="box"></div>
+   </div> 
+    
+
+    <ul>
+        <li id="item8" class="todoitem"><input type="checkbox">08.00: Wake Up</li>
+        <li id="item9" class="todoitem"><input type="checkbox">09.00: Breakfast</li>
+        <li id="item10" class="todoitem"><input type="checkbox">10.00: Go to Work</li>
+        <li id="item11" class="todoitem"><input type="checkbox">11.00: Work</li>
+        <li id="item12" class="todoitem"><input type="checkbox">12.00: Work</li>
+        <li id="item13" class="todoitem"><input type="checkbox">13.00: Lunch</li>
+        <li id="item14" class="todoitem"><input type="checkbox">14.00: Meeting</li>
+        <li id="item15" class="todoitem"><input type="checkbox">15.00: Break</li>
+        <li id="item16" class="todoitem"><input type="checkbox">16.00: Work</li>
+        <li id="item17" class="todoitem"><input type="checkbox">17.00: Leave Work</li>
+        <li id="item18" class="todoitem"><input type="checkbox">18.00: Cafe</li>
+        <li id="item19" class="todoitem"><input type="checkbox">19.00: Cafe</li>
+        <li id="item20" class="todoitem"><input type="checkbox">20.00: Go Home</li>
+        <li id="item21" class="todoitem"><input type="checkbox">21.00: Watch TV</li>
+        <li id="item22" class="todoitem"><input type="checkbox">22.00: Preparing</li>
+        <li id="item23" class="todoitem"><input type="checkbox">23.00: Sleep</li>
+    </ul>
+
+    <script>
+        var isBlue = false;
+        var bluebox = document.getElementById('blue');
+        setInterval(function(){
+            if(isBlue){
+                bluebox.style.background='purple'
+            }
+            else{
+                bluebox.style.background='blue'
+            }
+            isBlue = !isBlue;
+        },500);
+
+        var listItems = document.querySelectorAll('li');
+            listItems.forEach(function(item){
+            item.style.listStyleType='none';
+            //item.style.textDecoration='line-through';
+        });
+
+        var date = new Date();
+        var hour = date.getHours();
+        var element;
+        hour = 13; //for an example
+        for(var i=hour;i>=8;i--){
+            element=document.getElementById('item'+i);
+            element.style.textDecoration='line-through';
+            element.querySelector('input').checked=true
+        }
+        setInterval(function(){
+            for(var i=8;i<24;i++){
+                element=document.getElementById('item'+i);
+                if(element.querySelector('input').checked==true){
+                    element.style.textDecoration='line-through';
+                }
+                else{
+                    element.style.textDecoration='none';
+                }
+            } 
+        },100);
+        
+    </script>
+</body>
+</html>

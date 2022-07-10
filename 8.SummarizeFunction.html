@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Summarize Function</title>
+</head>
+<body>
+    
+
+    <script>
+        var string = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, alias.";
+        var maxCharacter = 20;
+        
+        function summarize11(str, maxChar){
+                var sumString = [];
+            if(maxCharacter>string.length){
+                return string;
+            }
+            else{
+                var words = string.split(" ");
+                var allCharacter = 0;
+                for (var i=0;i<words.length;i++){
+                    sumString.unshift(words[i]);
+                    allCharacter+=words[i].length;
+                    if (allCharacter>maxCharacter){
+                        break;
+                    }
+                }
+            return sumString.join(" ")+"...";
+            }
+        }
+        
+        console.log(summarize11(string,maxCharacter));
+    </script>
+</body>
+</html>

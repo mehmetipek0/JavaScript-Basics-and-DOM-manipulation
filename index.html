@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Basics</title>
+
+    <style>
+        .header{
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 18px;
+            background: red;
+        }
+        .container{
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>JavaScript Basics</h1>
+    </div>
+    <hr>
+    <div class="container">
+        <!-- <button onclick= "click1()">Click</button> -->
+        
+        <!-- <p id="para1">Paragraph 1</p>
+        <button onclick= "changeColor()">Change Color</button> -->
+        
+        <!-- <p id="para1">Paragraph 1</p>
+        <button onmouseover="mouseover()" onmouseout="mouseout()">Change Color</button> -->
+
+        <form name = "form1" action="send.php" method="post" onsubmit = "return verify();">
+            <input type="text" name="name1">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    
+    <script>
+        /*var num1 = 20;
+        var num2 = 30;
+        var num3 = 40;
+        alert("Sum: "+(num1+num2+num3));*/
+
+       
+        /*var array = ["Java","Python","C++","C"];
+        for(var i=0; i<array.length;i++){
+            console.log(array[i]);
+        }*/
+        
+       
+        /*var nums = [32,5,1,100,-1,92];
+        nums.forEach(function(num){
+            console.log(num);
+        })*/
+
+        
+        /*if (2 == '2'){
+            console.log("Equal");
+        }
+        if (2 === '2'){
+            console.log("Equal");
+        }*/
+
+        
+        /*function sayHi(name){
+            console.log("Hello! "+name);
+        }
+        sayHi("Mehmet");*/
+
+        
+        /*function sums(a,b,c){
+            return a+b+c;
+        }
+        var sum = sums(3,4,5); console.log(sum);*/
+
+        
+        /*var employee = {
+            name: "Mehmet",
+            surname: "İpek",
+            number: 12345,
+            languages: ["C","Java","Php"],
+            adress: {
+                district: "Ismet Inonu",
+                street:"706th"
+            },
+            nameInfo: function(){
+                return "Name: "+ this.name + " Surname: " + this.surname;
+            }
+        };
+        console.log(employee.name + employee.surname + 
+                    employee.number + employee.languages);
+        console.log(employee.adress);
+        console.log(employee.nameInfo());*/
+
+        
+        /*var employee = new Object();
+        employee.name = "Mehmet";
+        employee.surname = "İpek";
+        employee.nameInfo=function{
+            return "Name: " + this.name + " Surname: "+this.surname;
+        };
+        console.log(employee.nameInfo());*/
+
+        
+        /*function Employee(name,surname,number){
+            this.name = name;
+            this.surname = surname;
+            this.number = number;
+            this.showInfo = function(){
+                return "Name: "+this.name+"\nSurname: "+this.surname+"\nNumber: "+this.number;
+            }
+        }
+        var employee1 = new Employee("Mehmet","Ipek",12345);
+        var employee2 = new Employee("Ahmet","Murat",54321);
+        console.log(employee1.showInfo());
+        console.log(employee2.showInfo());*/
+
+
+        /*function click1(){
+            alert("Button has clicked...")
+        }*/
+
+
+        /*function changeColor(){
+            var element = document.getElementById("para1");
+            element.style.color = "red";
+        }*/
+
+
+        /*function mouseover(){
+            var element = document.getElementById("para1");
+            element.innerHTML = "Mouse Over Effect";
+        }
+        function mouseout(){
+            var element = document.getElementById("para1");
+            element.innerHTML = "Mouse Out Effect";
+        }*/
+
+
+        function verify(){
+            var form = document.forms["form1"];
+            var value = form["name1"].value
+
+            if(value == ""){
+                alert("Name area cannot be empty...");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
